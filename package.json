@@ -1,0 +1,23 @@
+{
+  "name": "node-deep-merge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src -d dist"
+  },
+  "keywords": [
+    "deep-merge",
+    "deepMerge"
+  ],
+  "author": "Ruhith",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
