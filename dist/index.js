@@ -7,32 +7,36 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 var lodash = require('lodash');
 
 var DeepMerge = function () {
-    function DeepMerge() {
-        _classCallCheck(this, DeepMerge);
+  function DeepMerge() {
+    _classCallCheck(this, DeepMerge);
+  }
+
+  _createClass(DeepMerge, [{
+    key: 'merge',
+
+    /**
+       * @param a
+       * @param b
+      * @returns {*}
+      */
+
+    value: function merge(a, b) {
+      return lodash.mergeWith(a, b, this.deep);
     }
 
-    _createClass(DeepMerge, [{
-        key: 'merge',
+    // eslint-disable-next-line class-methods-use-this
 
-        /**
-         * @param a
-         * @param b
-        * @returns {*}
-        */
+  }, {
+    key: 'deep',
+    value: function deep(a, b) {
+      if (lodash.isArray(a) && lodash.isArray(b)) {
+        return a.concat(b);
+      }
+      return {};
+    }
+  }]);
 
-        value: function merge(a, b) {
-            return lodash.mergeWith(a, b, this.deep);
-        }
-    }, {
-        key: 'deep',
-        value: function deep(a, b) {
-            if (lodash.isArray(a) && lodash.isArray(b)) {
-                return a.concat(b);
-            }
-        }
-    }]);
-
-    return DeepMerge;
+  return DeepMerge;
 }();
 
 module.exports = DeepMerge;
